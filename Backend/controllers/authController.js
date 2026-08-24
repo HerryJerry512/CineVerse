@@ -42,7 +42,7 @@ export const register = async (req, res) => {
     });
 
     //--------------Ab yaha email send karna ha------------------//
-
+    console.log("Email:", email);
     // Send OTP Email
     await sendEmail(
       email,
@@ -146,7 +146,6 @@ export const login = async (req, res) => {
   }
 };
 
-
 //----------verify Email or OTP----------//
 export const verifyEmail = async (req, res) => {
   try {
@@ -199,7 +198,6 @@ export const verifyEmail = async (req, res) => {
       success: true,
       message: "Email Verified Successfully",
     });
-
   } catch (error) {
     console.log(error);
 
@@ -244,13 +242,11 @@ export const resendOTP = async (req, res) => {
 
     // Generate New OTP
     const verificationOTP = Math.floor(
-      100000 + Math.random() * 900000
+      100000 + Math.random() * 900000,
     ).toString();
 
     // Expiry (10 Minutes)
-    const verificationOTPExpires = new Date(
-      Date.now() + 10 * 60 * 1000
-    );
+    const verificationOTPExpires = new Date(Date.now() + 10 * 60 * 1000);
 
     // Save
     user.verificationOTP = verificationOTP;
@@ -272,14 +268,13 @@ export const resendOTP = async (req, res) => {
         </h1>
 
         <p>This OTP is valid for 10 minutes.</p>
-      `
+      `,
     );
 
     return res.status(200).json({
       success: true,
       message: "New OTP sent successfully",
     });
-
   } catch (error) {
     console.log(error);
 
@@ -323,13 +318,11 @@ export const forgotPassword = async (req, res) => {
 
     // Generate OTP
     const resetPasswordOTP = Math.floor(
-      100000 + Math.random() * 900000
+      100000 + Math.random() * 900000,
     ).toString();
 
     // Expiry
-    const resetPasswordOTPExpires = new Date(
-      Date.now() + 10 * 60 * 1000
-    );
+    const resetPasswordOTPExpires = new Date(Date.now() + 10 * 60 * 1000);
 
     // Save
     user.resetPasswordOTP = resetPasswordOTP;
@@ -353,14 +346,13 @@ export const forgotPassword = async (req, res) => {
         <p>This OTP will expire in 10 minutes.</p>
 
         <small>If you didn't request this, ignore this email.</small>
-      `
+      `,
     );
 
     return res.status(200).json({
       success: true,
       message: "Password reset OTP sent successfully",
     });
-
   } catch (error) {
     console.log(error);
 
