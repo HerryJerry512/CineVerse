@@ -1,23 +1,76 @@
 # 🎬 CineVerse
 
-CineVerse is a full-stack movie web application built with the **MERN Stack**. It allows users to explore movies, search for their favorite titles, view movie details, watch trailers, manage their watchlist, and securely manage their accounts.
+**CineVerse** is a full-stack movie discovery web application built with the **MERN Stack**. It provides users with a modern and responsive platform to explore movies, search for titles, view detailed movie information, watch trailers, manage their watchlist, and securely manage their accounts.
+
+🔴 **Live Demo:** https://cine-verse-4rr2.vercel.app/
+
+📂 **GitHub Repository:** https://github.com/HassanNadeem502/CineVerse
+
+---
+
+## 📖 About the Project
+
+CineVerse is a real-world full-stack movie application designed to provide an engaging movie discovery experience.
+
+The application integrates the **TMDB API** to fetch movie data and provides features such as movie discovery, search, detailed movie information, cast details, trailers, and personalized watchlists.
+
+It also includes a complete user authentication system with **JWT authentication, OTP-based email verification, password recovery, profile image uploads, and Cloudinary storage**.
+
+The project demonstrates the development of a complete MERN application, including frontend development, backend APIs, database integration, authentication, external API integration, cloud storage, and deployment.
+
+---
 
 ## ✨ Features
 
-* 🎬 Browse and explore movies
-* 🔎 Search for movies
-* 📄 View detailed movie information
-* 🎭 View movie cast
-* ▶️ Watch movie trailers
-* ❤️ Add movies to watchlist
-* 🔐 User registration and login
-* 📧 OTP-based email verification
-* 🔑 Forgot and reset password
-* 👤 Profile image upload
-* ☁️ Cloudinary image storage
-* 📱 Responsive user interface
-* 🔒 Secure authentication
-* 🌐 Movie data powered by TMDB API
+### 🎬 Movie Discovery
+
+* Browse and explore movies
+* Trending movies
+* Popular movies
+* Upcoming movies
+* Top-rated movies
+* Movie search
+* Detailed movie information
+* Movie cast information
+* Movie genres
+* Movie ratings and release information
+* Watch movie trailers
+
+### ❤️ Watchlist
+
+* Add movies to watchlist
+* Remove movies from watchlist
+* View personalized watchlist
+* Watch movies directly from the watchlist
+
+### 🔐 Authentication & Account Management
+
+* User registration
+* Secure user login
+* JWT-based authentication
+* OTP-based email verification
+* Forgot password functionality
+* Reset password functionality
+* User profile management
+* Profile image upload
+
+### ☁️ Cloud & External Services
+
+* TMDB API for movie data
+* Cloudinary for profile image storage
+* Resend for email delivery
+
+### 📱 User Experience
+
+* Responsive user interface
+* Modern dark-themed design
+* Interactive movie cards
+* Responsive navigation
+* Search functionality
+* Trailer modal
+* Smooth movie browsing experience
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -25,8 +78,8 @@ CineVerse is a full-stack movie web application built with the **MERN Stack**. I
 
 * React.js
 * Vite
-* Tailwind CSS
 * JavaScript
+* Tailwind CSS
 * React Router
 * Fetch API
 
@@ -36,13 +89,40 @@ CineVerse is a full-stack movie web application built with the **MERN Stack**. I
 * Express.js
 * MongoDB
 * Mongoose
-* Nodemailer
 * JWT Authentication
+* Resend
 
 ### External Services
 
-* TMDB API — Movie data
-* Cloudinary — Profile image storage
+* **TMDB API** — Movie data
+* **Cloudinary** — Profile image storage
+* **Resend** — Email delivery
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home & Movie Search
+
+![CineVerse Home](./screenshots/home-search.png)
+
+### 🎬 Movie Listing
+
+![CineVerse Movie Listing](./screenshots/movie-listing.png)
+
+### 📄 Movie Details
+
+![CineVerse Movie Details](./screenshots/movie-details.png)
+
+### ❤️ Watchlist
+
+![CineVerse Watchlist](./screenshots/watchlist.png)
+
+### ▶️ Movie Trailer
+
+![CineVerse Movie Trailer](./screenshots/movie-trailer.png)
+
+---
 
 ## 📁 Project Structure
 
@@ -64,99 +144,170 @@ CineVerse/
 │   ├── public/
 │   └── package.json
 │
+├── screenshots/
+│   ├── home-search.png
+│   ├── movie-listing.png
+│   ├── movie-details.png
+│   ├── watchlist.png
+│   └── movie-trailer.png
+│
 ├── .gitignore
 └── README.md
 ```
 
-## ⚙️ Installation
+---
 
-Clone the repository:
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/HassanNadeem502/CineVerse.git
 ```
 
-Move into the project:
+### 2. Navigate to the Project
 
 ```bash
 cd CineVerse
 ```
 
-### Backend Setup
+### 3. Backend Setup
+
+Navigate to the backend directory:
 
 ```bash
 cd Backend
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Create a `.env` file inside the `Backend` folder and add your required environment variables.
+Create a `.env` file inside the `Backend` directory and configure the required environment variables.
 
-Then start the backend:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-### Frontend Setup
+### 4. Frontend Setup
 
-Open another terminal:
+Open a new terminal and navigate to the frontend:
 
 ```bash
 cd Frontend
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Create a `.env` file inside the `Frontend` folder and add your TMDB API key:
-
-```env
-VITE_TMDB_API_KEY=your_tmdb_api_key
-```
-
-Then start the frontend:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
+---
+
 ## 🔐 Environment Variables
 
-Do **not** upload your `.env` files to GitHub.
+Create a `.env` file inside the `Backend` directory.
 
-Example frontend variable:
+**Never commit your `.env` file or expose secret credentials publicly.**
+
+Example configuration:
 
 ```env
-VITE_TMDB_API_KEY=your_tmdb_api_key
+PORT=your_port
+MONGODB_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=your_jwt_expiration
+
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_password
+
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+TMDB_API_KEY=your_tmdb_api_key
+TMDB_BASE_URL=your_tmdb_base_url
+
+RESEND_API_KEY=your_resend_api_key
 ```
 
-Backend environment variables may include configuration for:
+### Environment Variables Used
 
+| Variable                | Purpose                             |
+| ----------------------- | ----------------------------------- |
+| `PORT`                  | Backend server port                 |
+| `MONGODB_URI`           | MongoDB database connection         |
+| `JWT_SECRET`            | JWT authentication secret           |
+| `JWT_EXPIRES_IN`        | JWT expiration configuration        |
+| `EMAIL_USER`            | Email configuration                 |
+| `EMAIL_PASS`            | Email authentication configuration  |
+| `CLOUDINARY_CLOUD_NAME` | Cloudinary cloud configuration      |
+| `CLOUDINARY_API_KEY`    | Cloudinary API authentication       |
+| `CLOUDINARY_API_SECRET` | Cloudinary API authentication       |
+| `TMDB_API_KEY`          | TMDB API authentication             |
+| `TMDB_BASE_URL`         | TMDB API base URL                   |
+| `RESEND_API_KEY`        | Resend email service authentication |
+
+---
+
+## 🚀 Deployment
+
+CineVerse has been deployed as a full-stack application and is available online.
+
+🔴 **Live Application:** https://cine-verse-4rr2.vercel.app/
+
+The project uses external services for production functionality, including:
+
+* TMDB API
 * MongoDB
-* JWT
-* Nodemailer
 * Cloudinary
-* Other application secrets
+* Resend
 
-## 📸 Screenshots
+---
 
-Screenshots can be added here to showcase the CineVerse interface.
+## 🔮 Future Improvements
 
-## 🚀 Future Improvements
+Some planned improvements for CineVerse include:
 
 * Advanced movie filtering
-* Personalized recommendations
-* Improved movie streaming functionality
+* Personalized movie recommendations
+* More advanced search functionality
+* Improved user profile features
+* Enhanced movie discovery experience
+* Additional user personalization features
 * Admin dashboard
-* More user profile features
+* Additional movie-related functionality
+
+---
 
 ## 👨‍💻 Author
 
-**Hassan Nadeem**
+### Hassan Nadeem
 
-Full Stack MERN Developer
+**Full Stack MERN Developer**
 
-* GitHub: `HassanNadeem502`
-* LinkedIn: `hassan-nadeem-424263399`
+I build modern, responsive, and full-stack web applications using technologies such as React, Node.js, Express, MongoDB, and related modern web technologies.
+
+**GitHub:**
+https://github.com/HassanNadeem502
+
+**LinkedIn:**
+https://www.linkedin.com/in/hassan-nadeem-424263399/
+
+---
 
 ## 📄 License
 
-This project is created for learning and portfolio purposes.
+This project was created for **learning, development, and portfolio purposes**.
