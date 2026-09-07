@@ -12,6 +12,7 @@ const allowedOrigins = [
   "https://cine-verse-fcap3bu9o-hassannadeem502s-projects.vercel.app",
   "https://cine-verse-4rr2-git-main-hassannadeem502s-projects.vercel.app",
   "https://cine-verse-4rr2.vercel.app",
+  "https://cine-verse-git-main-hassannadeem502s-projects.vercel.app",
 ];
 
 app.use(
