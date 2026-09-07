@@ -118,8 +118,8 @@ const Footer = () => {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand + Socials */}
           <div>
             <Link to="/" className="inline-flex items-center gap-2 group">
@@ -212,7 +212,7 @@ const Footer = () => {
 
                 <form
                   onSubmit={(e) => e.preventDefault()}
-                  className="flex items-center gap-2"
+                  className="flex flex-col gap-2 min-[380px]:flex-row min-[380px]:items-center"
                 >
                   <input
                     type="email"
@@ -240,15 +240,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div
-          className="mt-14 pt-6 border-t border-white/5 flex flex-col sm:flex-row
-            items-center justify-between gap-4"
-        >
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 sm:mt-14 sm:flex-row">
           <p className="text-xs text-[#6B7280] text-center sm:text-left">
             © {new Date().getFullYear()} CineVerse. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-6">
             <Link
               to="/privacy"
               className="text-xs text-[#6B7280] hover:text-white transition-colors duration-300"

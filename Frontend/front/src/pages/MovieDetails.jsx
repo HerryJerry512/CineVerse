@@ -16,7 +16,7 @@ const MovieDetails = () => {
   const { id } = useParams();
   const location = useLocation();
   const movieId =
-    id ??//"Jo pehli value null ya undefined na ho, usi ko use kar lo."
+    id ?? //"Jo pehli value null ya undefined na ho, usi ko use kar lo."
     location.state?.movie?.id ??
     location.state?.movie?.tmdbId ??
     location.state?.movie?._id;
@@ -86,10 +86,6 @@ const MovieDetails = () => {
   if (error || !movie) {
     return <div className="text-white p-10">{error || "Movie not found."}</div>;
   }
-
-  const IMAGE_URL = movie.poster_path
-    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : null;
 
   return (
     <main className="bg-black min-h-screen">

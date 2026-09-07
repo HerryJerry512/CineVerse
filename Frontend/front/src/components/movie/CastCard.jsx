@@ -7,7 +7,7 @@ const CastCard = ({ actor }) => {
     <div
       className="
         group
-        min-w-[170px]
+        min-w-[140px] sm:min-w-[170px]
         cursor-pointer
         transition-all
         duration-300
@@ -18,8 +18,10 @@ const CastCard = ({ actor }) => {
         src={IMAGE}
         alt={actor.name}
         className="
-          w-40
-          h-40
+          h-32
+          w-32
+          sm:h-40
+          sm:w-40
           rounded-full
           object-cover
           border-4

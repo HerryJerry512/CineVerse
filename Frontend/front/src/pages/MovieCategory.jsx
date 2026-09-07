@@ -27,8 +27,10 @@ const MovieCategory = ({ title, fetchMovies }) => {
 
   return (
     <main className="min-h-screen bg-black">
-      <section className="container mx-auto px-6 py-12">
-        <h1 className="mb-8 text-4xl font-bold text-white">{title}</h1>
+      <section className="container mx-auto px-4 py-8 sm:px-6 sm:py-12">
+        <h1 className="mb-6 text-3xl font-bold text-white sm:mb-8 sm:text-4xl">
+          {title}
+        </h1>
 
         {loading && <p className="text-gray-400">Loading movies...</p>}
 
@@ -39,9 +41,12 @@ const MovieCategory = ({ title, fetchMovies }) => {
         )}
 
         {!loading && !error && movies.length > 0 && (
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {movies.map((movie) => (
-              <MovieCard key={movie.id || movie.tmdbId || movie._id} movie={movie} />
+              <MovieCard
+                key={movie.id || movie.tmdbId || movie._id}
+                movie={movie}
+              />
             ))}
           </div>
         )}

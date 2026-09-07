@@ -2,11 +2,12 @@ import { useState } from "react";
 import { toggleWatchlist } from "../../services/watchlistService";
 
 const MovieHero = ({ movie, onTrailerOpen }) => {
+  const [watchlistLoading, setWatchlistLoading] = useState(false);
+
   if (!movie) return null;
 
   const BACKDROP = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
   const POSTER = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-  const [watchlistLoading, setWatchlistLoading] = useState(false);
 
   const handleWatchlist = async () => {
     try {
@@ -29,7 +30,7 @@ const MovieHero = ({ movie, onTrailerOpen }) => {
     }
   };
   return (
-    <section className="relative w-full min-h-[80vh]">
+    <section className="relative w-full overflow-hidden md:min-h-[80vh]">
       {/* Backdrop */}
       <img
         src={BACKDROP}
@@ -58,14 +59,18 @@ const MovieHero = ({ movie, onTrailerOpen }) => {
           relative
           container
           mx-auto
-          px-6
-          py-24
+          w-full
+          px-4
+          py-16
+          sm:px-6
+          sm:py-20
 
           flex
           flex-col
           md:flex-row
           items-center
-          gap-10
+          gap-8
+          md:gap-10
         "
       >
         {/* Poster */}
@@ -74,7 +79,10 @@ const MovieHero = ({ movie, onTrailerOpen }) => {
           src={POSTER}
           alt={movie.title}
           className="
-            w-72
+            w-48
+            max-w-full
+            sm:w-64
+            md:w-72
             rounded-2xl
             shadow-2xl
           "
@@ -82,10 +90,11 @@ const MovieHero = ({ movie, onTrailerOpen }) => {
 
         {/* Info */}
 
-        <div className="text-white">
+        <div className="min-w-0 max-w-3xl text-white">
           <h1
             className="
-              text-5xl
+              text-3xl
+              sm:text-5xl
               font-black
               mb-6
             "
@@ -99,8 +108,9 @@ const MovieHero = ({ movie, onTrailerOpen }) => {
             className="
               flex
               flex-wrap
-              gap-5
-              text-lg
+              gap-x-4
+              gap-y-2
+              text-base
               text-gray-300
               mb-6
             "
@@ -127,13 +137,13 @@ const MovieHero = ({ movie, onTrailerOpen }) => {
 
           {/* Buttons */}
 
-          <div className="flex gap-5">
+          <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-5">
             <button
               className="
                 bg-purple-600
                 hover:bg-purple-700
 
-                px-8
+                w-full px-6 sm:w-auto sm:px-8
                 py-4
 
                 rounded-xl
@@ -150,7 +160,7 @@ const MovieHero = ({ movie, onTrailerOpen }) => {
             <button
               onClick={handleWatchlist}
               disabled={watchlistLoading}
-              className="px-6 py-3 bg-purple-600 rounded-lg"
+              className="w-full rounded-lg bg-purple-600 px-6 py-3 sm:w-auto"
             >
               {watchlistLoading ? "Loading..." : "❤️ Watchlist"}
             </button>

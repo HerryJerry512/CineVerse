@@ -55,28 +55,28 @@ const Navbar = () => {
   }, []);
 
   //search ka liya useEffect
- useEffect(() => {
-  const timer = setTimeout(async () => {
-    if (!query.trim()) {
-      setResults([]);
-      return;
-    }
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      if (!query.trim()) {
+        setResults([]);
+        return;
+      }
 
-    try {
-      setLoading(true);
+      try {
+        setLoading(true);
 
-      const movies = await searchMovies(query);
+        const movies = await searchMovies(query);
 
-      setResults(movies);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }, 300);
+        setResults(movies);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }, 300);
 
-  return () => clearTimeout(timer);
-}, [query]);
+    return () => clearTimeout(timer);
+  }, [query]);
 
   const handleLogout = () => {
     logout();
@@ -320,7 +320,7 @@ const Navbar = () => {
       {/* ---------------- Mobile Menu ---------------- */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#0B1120] border-b border-white/5
-          ${isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+          ${isMobileMenuOpen ? "max-h-[calc(100dvh-72px)] overflow-y-auto opacity-100" : "max-h-0 opacity-0"}`}
       >
         <ul className="flex flex-col px-6 py-4 gap-1">
           {NAV_LINKS.map((link) => (

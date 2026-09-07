@@ -25,14 +25,14 @@ const MovieSection = ({
   };
   if (!movies?.length) return null;
   return (
-    <section className="py-12" >
-      <div className="container mx-auto px-6">
+    <section className="py-8 sm:py-12">
+      <div className="container mx-auto min-w-0 px-4 sm:px-6">
         {/* Header */}
 
-        <div className="flex items-center justify-between mb-6">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3 sm:mb-6">
           <h2
             className="
-            text-3xl 
+            text-2xl sm:text-3xl
             font-bold 
             text-white
           "
@@ -88,14 +88,14 @@ const MovieSection = ({
             scroll-smooth
 
             scrollbar-hide
-            px-12
+            px-10 sm:px-12
             "
           >
             {movies.map((movie) => (
               <div
                 key={movie.id}
                 className="
-                  min-w-[220px]
+                  min-w-[160px] sm:min-w-[190px] lg:min-w-[220px]
                   "
               >
                 <MovieCard

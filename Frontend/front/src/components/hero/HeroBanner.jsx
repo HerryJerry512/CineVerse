@@ -27,7 +27,7 @@ const HeroBanner = ({
   const backdropURL = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
 
   return (
-    <section className="relative h-[600px] overflow-hidden md:h-[650px] bg-[#0B1120]">
+    <section className="relative min-h-[620px] overflow-hidden bg-[#0B1120] sm:min-h-[650px]">
       {/* Background */}
       <div
         className="absolute inset-0 hero-bg bg-cover bg-center"
@@ -46,7 +46,7 @@ const HeroBanner = ({
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60"></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto h-full px-6 pb-24 lg:px-16">
+      <div className="relative z-10 container mx-auto h-full px-4 pb-24 pt-16 sm:px-6 lg:px-16">
         <div className="flex h-full items-center">
           <div className="max-w-3xl hero-content">
             {/* Badge */}
@@ -55,12 +55,12 @@ const HeroBanner = ({
             </span>
 
             {/* Title */}
-            <h1 className="line-clamp-2 text-4xl font-black leading-[1.05] text-white drop-shadow-2xl md:text-6xl lg:text-7xl">
+            <h1 className="line-clamp-3 text-3xl font-black leading-[1.05] text-white drop-shadow-2xl sm:text-5xl md:text-6xl lg:text-7xl">
               {movie.title}
             </h1>
 
             {/* Movie Info */}
-            <div className="flex flex-wrap items-center gap-6 mt-6 text-[#D1D5DB]">
+            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#D1D5DB] sm:mt-6 sm:gap-6 sm:text-base">
               <span className="flex items-center gap-1 text-yellow-400 font-bold">
                 <FiStar className="fill-yellow-400" size={16} />
                 {movie.vote_average.toFixed(1)}
@@ -72,12 +72,12 @@ const HeroBanner = ({
             </div>
 
             {/* Description */}
-            <p className="mt-6 max-w-2xl line-clamp-3 text-base leading-7 text-[#D1D5DB] md:text-lg md:leading-8">
+            <p className="mt-5 max-w-2xl line-clamp-3 text-sm leading-6 text-[#D1D5DB] sm:mt-6 sm:text-base sm:leading-7 md:text-lg md:leading-8">
               {movie.overview}
             </p>
 
             {/* Buttons */}
-            <div className="mt-5 flex flex-wrap gap-3 md:gap-5">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:gap-5">
               <button
                 className="
                   flex items-center gap-2
@@ -87,7 +87,7 @@ const HeroBanner = ({
                   active:scale-95
                   transition-all
                   duration-300
-                  px-6
+                  justify-center px-5 sm:px-6
                   py-3
                   rounded-xl
                   font-semibold
@@ -113,7 +113,7 @@ const HeroBanner = ({
                   active:scale-95
                   transition-all
                   duration-300
-                  px-6
+                  justify-center px-5 sm:px-6
                   py-3
                   rounded-xl
                   font-semibold

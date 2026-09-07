@@ -31,7 +31,8 @@ const MovieCard = ({ movie, showRemoveButton = false, onRemove }) => {
               alt={movie.title}
               className="
             w-full
-            h-[420px]
+            aspect-[2/3]
+            h-auto
             object-cover
             transition-transform
             duration-500
@@ -63,7 +64,7 @@ const MovieCard = ({ movie, showRemoveButton = false, onRemove }) => {
             left-3
             bg-yellow-400
             text-black
-            px-3
+            px-2.5 sm:px-3
             py-1
             rounded-full
             text-sm
@@ -105,7 +106,7 @@ const MovieCard = ({ movie, showRemoveButton = false, onRemove }) => {
             flex
             flex-col
             justify-end
-            p-5
+              p-3 sm:p-5
             opacity-0
             group-hover:opacity-100
             transition-all

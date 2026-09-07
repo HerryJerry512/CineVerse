@@ -22,11 +22,11 @@ const CastSection = ({ cast }) => {
   if (!cast?.length) return null;
   return (
     <section className="py-16">
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center mb-8">
+      <div className="container mx-auto min-w-0 px-4 sm:px-6">
+        <div className="mb-6 flex items-center justify-between sm:mb-8">
           <h2
             className="
-              text-3xl
+              text-2xl sm:text-3xl
               font-bold
               text-white
             "
@@ -64,11 +64,11 @@ const CastSection = ({ cast }) => {
             ref={sliderRef}
             className="
               flex
-              gap-8
+              gap-5 sm:gap-8
               overflow-x-auto
               scroll-smooth
               scrollbar-hide
-              px-12
+              px-10 sm:px-12
             "
           >
             {cast.slice(0, 15).map((actor) => (
