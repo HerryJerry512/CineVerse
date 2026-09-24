@@ -1,4 +1,4 @@
-const API = "https://cineverse-production-47da.up.railway.app/api/v1/user";
+const API = "https://cineverse-production-fcc8.up.railway.app/api/v1/user";
 
 export const uploadProfileImage = async (file, token) => {
   const formData = new FormData();
@@ -33,7 +33,7 @@ export const updateProfile = async (data, token) => {
 //-------------Change Password-----------------
 export const changePassword = async (passwordData, token) => {
   const response = await fetch(
-    "https://cineverse-production-47da.up.railway.app/api/v1/user/change-password",
+    "https://cineverse-production-fcc8.up.railway.app/api/v1/user/change-password",
     {
       method: "PUT",
 

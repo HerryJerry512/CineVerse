@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://cineverse-production-47da.up.railway.app/api/v1/movies";
+  "https://cineverse-production-fcc8.up.railway.app/api/v1/movies";
 
 // ===============================
 // Trending Movies
@@ -126,7 +126,7 @@ export const getMovieTrailer = async (movieId) => {
 // ===============================
 export const searchMovies = async (query) => {
   const response = await fetch(
-    `https://cineverse-production-47da.up.railway.app/api/v1/movies/search?query=${encodeURIComponent(query)}`,
+    `https://cineverse-production-fcc8.up.railway.app/api/v1/movies/search?query=${encodeURIComponent(query)}`,
   );
 
   if (!response.ok) {

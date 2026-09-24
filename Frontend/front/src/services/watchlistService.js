@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://cineverse-production-47da.up.railway.app/api/v1/watchlist";
+  "https://cineverse-production-fcc8.up.railway.app/api/v1/watchlist";
 
 // Toggle Watchlist
 export const toggleWatchlist = async (movieId) => {
